@@ -19,7 +19,6 @@ const htmlInclude = () => {
     .pipe(dest('app'))
 }
 
-
 function svgSprites() {
   return src('app/images/icons/*.svg')
     .pipe(
