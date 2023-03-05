@@ -8,6 +8,7 @@ const imagemin      = require('gulp-imagemin');
 const fileInclude   = require('gulp-file-include');
 const svgSprite     = require('gulp-svg-sprite');
 const del           = require('del');
+const ttf2woff2 = require('gulp-ttf2woff2');
 const browserSync   = require('browser-sync').create();
 
 const htmlInclude = () => {
@@ -17,6 +18,12 @@ const htmlInclude = () => {
       basepath: '@file',
     }))
     .pipe(dest('app'))
+}
+
+function convertFonts() {
+  return src('app/fonts/*.ttf')
+    .pipe(ttf2woff2())
+    .pipe(dest('app/fonts'));
 }
 
 function svgSprites() {
@@ -58,6 +65,7 @@ function styles() {
 function scripts() {
   return src([
     'node_modules/jquery/dist/jquery.js',
+    'node_modules/slick-carousel/slick/slick.js',
     'app/js/main.js'
   ])
   .pipe(concat('main.min.js'))
@@ -116,6 +124,7 @@ exports.svgSprites = svgSprites;
 exports.cleanDist = cleanDist;
 exports.images = images;
 exports.htmlInclude = htmlInclude;
+exports.convertFonts = convertFonts;
 exports.build = series (cleanDist, images, build);
 
 exports.default = parallel(htmlInclude, svgSprites, styles, scripts, browsersync, watching);

@@ -1,0 +1,80 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: $silver-100;
+  padding: 60px 0;
+  border-bottom: 3px solid transparent;
+  transition: padding .3s ease-in-out, border-color 0.3s ease-in-out;
+
+  &.sticky {
+    border-color: $orange-900;
+    padding: 15px 0;
+    background-color: $white;
+    z-index: 1;
+  }
+
+  &__nav {
+    display: flex;
+    align-items: center;
+    gap: 60px;
+  }
+
+  &__action {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  &__btn {
+    &:hover {
+      .btn-counter {
+        color: $orange-900;
+        background-color: $white;
+      }
+    }
+
+    &:active {
+      .btn-counter {
+        color: $white;
+        background-color: $orange-900;
+      }
+    }
+  }
+}
+
+
+
+.menu {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  margin-left: auto;
+
+  &__link {
+    font-size: 18px;
+    letter-spacing: 0.01em;
+    border-radius: 5px;
+    outline: 2px solid transparent;
+    transition: outline-color .3s ease-in-out, color .3s ease-in-out, text-shadow .3s ease-in-out;
+
+
+    &:focus {
+      outline-color: rgba($orange-900, 0.7);
+    }
+
+    &:hover {
+      color: $orange-900;
+    }
+
+    &:active {
+      text-shadow: 2px 2px 5px rgba($dark, 0.5);
+      outline-color: transparent;
+    }
+
+    &--current {
+      color: $orange-900;
+    }
+  }
+}

@@ -1,0 +1,36 @@
+$rightPos: calc((100vw - 1170px) / 2);
+
+.hero {
+  min-height: 660px;
+  display: flex;
+  align-items: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: right $rightPos center;
+
+  &__title {
+    max-width: 480px;
+    font-family: 'Rubik', sans-serif;
+    @include fz(66, 40);
+    color: $darkBlue-900;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+
+    span {
+      display: block;
+    }
+  }
+
+  &__description {
+    max-width: 450px;
+    line-height: 1.5;
+    margin-bottom: 20px;
+    font-size: 20px;
+  }
+
+  &__links {
+    display: flex;
+    gap: 25px;
+    align-items: center;
+  }
+}

@@ -1,0 +1,51 @@
+$leftPos: calc((100vw - 1170px) / 2);
+
+.features {
+  height: 585px;
+  display: flex;
+  align-items: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: left $leftPos center;
+
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 30px;
+    max-width: 470px;
+    width: 100%;
+    margin-right: 66px;
+    margin-left: auto;
+  }
+
+  &__title {
+    margin-bottom: 0;
+    text-align: start;
+  }
+
+  &__description {
+    font-size: 20px;
+    line-height: 1.5;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+  }
+
+  &__item {
+    gap: 30px;
+    &::before{
+      min-width: 34px;
+      height: 34px;
+    }
+  }
+
+  &__btn {
+    max-width: fit-content;
+  }
+}

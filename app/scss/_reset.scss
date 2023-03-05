@@ -8,9 +8,10 @@ html {
   box-sizing: inherit;
 }
 
-ul[class],
-ol[class] {
+ul,
+ol {
   padding: 0;
+  list-style: none;
 }
 
 body,
@@ -32,12 +33,13 @@ dd {
   margin: 0;
 }
 
-ul[class] {
-  list-style: none;
-}
-
 img {
   max-width: 100%;
+  display: block;
+}
+
+label {
+  display: block;
 }
 
 input,
@@ -56,4 +58,8 @@ select {
 a {
   text-decoration: none;
   color: inherit;
+}
+
+address {
+  font-style: normal;
 }
