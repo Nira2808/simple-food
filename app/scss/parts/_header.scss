@@ -18,13 +18,12 @@
   &__nav {
     display: flex;
     align-items: center;
-    gap: 60px;
+    gap: 50px;
   }
 
   &__action {
     display: flex;
     align-items: center;
-    gap: 10px;
   }
 
   &__btn {
@@ -49,7 +48,7 @@
 .menu {
   display: flex;
   align-items: center;
-  gap: 40px;
+  gap: 47px;
   margin-left: auto;
 
   &__link {

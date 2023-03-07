@@ -41,7 +41,9 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
   $('.slider__inner').slick({
-
+    dots: true,
+    appendArrows:$('.slider__nav'),
+    appendDots:$('.slider__nav')
   })
 });
 

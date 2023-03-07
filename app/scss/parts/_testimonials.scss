@@ -1,12 +1,7 @@
-.slider {
-
-  &__inner {}
-
-  &__item {}
-}
-
 .quote {
   display: flex;
+  justify-content: center;
+  align-items: center;
 
   &__photo {
     margin-left: auto;
@@ -22,6 +17,7 @@
 
   &__text {
     font-style: italic;
+    font-size: 20px;
     line-height: 1.5;
     margin-bottom: 30px;
     padding: 0 40px;
@@ -31,8 +27,8 @@
     &::after {
       content: '';
       position: absolute;
-      min-width: 24px;
-      height: 19px;
+      min-width: 28px;
+      height: 28px;
       background-color: $gray;
       mask-image: url('../images/sprite.svg#icon-quote-open');
       mask-repeat: no-repeat;
@@ -59,5 +55,123 @@
   &__name-desc {
     font-size: 14px;
     padding: 0 40px;
+  }
+}
+
+.slider {
+  &__inner{
+    margin-bottom: 30px;
+  }
+  &__nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.slick {
+  &-dots {
+    display: flex;
+    justify-content: center;
+    font-size: 0;
+    gap: 15px;
+    order: 2;
+    margin-right: 23px;
+    outline: 0;
+    transition: box-shadow 0.3s ease-in-out, background-color 0.3s ease-in-out;
+
+    button {
+      width: 15px;
+      height: 15px;
+      background-color: $gray;
+      border-radius: 50%;
+      box-shadow: 0px 0px 0px 2px transparent;
+
+      &:focus {
+        box-shadow: 0px 0px 0px 2px #FF6838;
+      }
+
+      &:hover {
+        background-color: $orange-50;
+        box-shadow: 0px 0px 0px 2px rgba($orange-900, 0.5);
+      }
+
+      &:active {
+        background-color: rgba($orange-900, 0.5);
+        box-shadow: 0px 0px 0px 2px transparent;
+      }
+    }
+  }
+
+  &-arrow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0;
+    min-width: 34px;
+    height: 34px;
+    outline: 3px solid #C2C2C2;
+    border-radius: 50%;
+
+    &:focus {
+      box-shadow: 0px 0px 0px 3px rgba($orange-900, 0.7);
+    }
+
+    &:hover {
+      background-color: $orange-50;
+      outline: 0;
+      box-shadow: 0px 0px 0px 3px rgba($orange-900, 0.5);
+
+      &::before {
+        background-color: rgba($orange-900, 0.5);
+      }
+    }
+
+    &:active {
+      background-color: $orange-50;
+      outline: 3px solid transparent;
+      box-shadow: 0px 0px 0px 3px transparent;
+
+      &::before {
+        background-color: $orange-900;
+      }
+    }
+
+    &::before {
+      content: '';
+      min-width: 19px;
+      height: 19px;
+      background-color: $gray;
+      mask-image: url('../images/sprite.svg#icon-left');
+      mask-repeat: no-repeat;
+      mask-size: contain;
+      mask-position: center;
+    }
+  }
+
+  &-prev {
+    order: 1;
+    margin-right: 23px;
+  }
+
+  &-next {
+    order: 3;
+
+    &::before {
+      mask-image: url('../images/sprite.svg#icon-right');
+    }
+  }
+
+  &-active {
+    .slick-dots {
+      background-color: $orange-900;
+    }
+
+    .slick-arrow {
+      outline: 3px solid $orange-900;
+      &::before{
+        background-color: $orange-900;
+      }
+    }
   }
 }
