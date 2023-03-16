@@ -1,0 +1,70 @@
+.quote {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 40px;
+  padding: 0 size(90, 0);
+
+  &__content {
+    max-width: 650px;
+    padding: 0 40px;
+    flex-basis: 320px;
+    flex-grow: 1;
+    width: 100%;
+  }
+
+  &__photo {
+    border-radius: 50%;
+    max-width: size(300, 100);
+    width: 100%;
+    height: size(300, 100);
+    flex-basis: 100px;
+    margin: 0 auto;
+    object-fit: contain;
+  }
+
+  &__text {
+    font-style: italic;
+    font-size: 20px;
+    line-height: 1.5;
+    margin-bottom: 30px;
+    position: relative;
+
+    &::before,
+    &::after {
+      content: '';
+      display: inline-block;
+      position: absolute;
+      min-width: 24px;
+      height: 24px;
+      mask-image: url('../images/sprite.svg#icon-quote-open');
+      background-color: $gray;
+      mask-repeat: no-repeat;
+      mask-size: contain;
+      mask-position: center;
+    }
+
+    &::before {
+      left: -40px;
+      top: 0;
+    }
+
+    &::after {
+      mask-image: url('../images/sprite.svg#icon-quote-close');
+      right: -40px;
+      bottom: 0;
+    }
+  }
+
+  &__name {
+    font-size: 20px;
+    font-weight: 500;
+    color: $orange-900;
+    margin-bottom: 15px;
+  }
+
+  &__name-desc {
+    font-size: 14px;
+  }
+}
