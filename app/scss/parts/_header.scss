@@ -4,7 +4,7 @@
   left: 0;
   right: 0;
   background-color: $silver-100;
-  padding: 60px 0;
+  padding: size(60, 14) 0;
   border-bottom: 3px solid transparent;
   transition: padding .3s ease-in-out, border-color 0.3s ease-in-out;
 
@@ -15,15 +15,60 @@
     z-index: 10;
   }
 
+  &::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba($dark, 0.5);
+    opacity: 0;
+    visibility: hidden;
+    z-index: -100;
+    transition: opacity 0.3s ease-in-out;
+  }
+
+  @at-root .lock {
+    overflow: hidden;
+
+    .header {
+      &::before {
+        @include r($size-md) {
+          opacity: 1;
+          visibility: visible;
+          z-index: 10;
+        }
+      }
+    }
+  }
+
   &__nav {
     display: flex;
     align-items: center;
     gap: 50px;
   }
 
+  &__menu {
+    @include r($size-md) {
+      display: none;
+    }
+  }
+
+  &__logo {
+    @include r($size-xs) {
+      width: 115px;
+    }
+  }
+
   &__action {
     display: flex;
     align-items: center;
+    gap: 30px;
+
+    @include r($size-md) {
+      margin-left: auto;
+    }
   }
 
   &__btn {
@@ -41,39 +86,9 @@
       }
     }
   }
-}
 
-
-
-.menu {
-  display: flex;
-  align-items: center;
-  gap: 47px;
-  margin-left: auto;
-
-  &__link {
-    font-size: 18px;
-    letter-spacing: 0.01em;
-    border-radius: 5px;
-    outline: 2px solid transparent;
-    transition: outline-color .3s ease-in-out, color .3s ease-in-out, text-shadow .3s ease-in-out;
-
-
-    &:focus {
-      outline-color: rgba($orange-900, 0.7);
-    }
-
-    &:hover {
-      color: $orange-900;
-    }
-
-    &:active {
-      text-shadow: 2px 2px 5px rgba($dark, 0.5);
-      outline-color: transparent;
-    }
-
-    &--current {
-      color: $orange-900;
-    }
+  &__wrapper {
+    display: flex;
+    align-items: center;
   }
 }

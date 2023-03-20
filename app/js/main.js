@@ -1,5 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
 
+  const body = document.querySelector('body');
   const header = document.querySelector('.header');
 
   window.onscroll = () => {
@@ -53,5 +54,45 @@ document.addEventListener("DOMContentLoaded", () => {
       prevEl: ".reviews__btn--prev",
     },
   });
+
+  if (window.innerWidth <= 992) {
+    const burger = document.querySelector('.burger');
+    closeBtn = document.querySelector('.close-btn');
+    const mobileNav = document.querySelector('.mobile-nav');
+
+    burger.addEventListener('click', () => {
+      body.classList.add('lock');
+      mobileNav.classList.add('open');
+    })
+
+    closeBtn.addEventListener('click', () => {
+      body.classList.remove('lock');
+      mobileNav.classList.remove('open');
+    })
+
+
+    document.addEventListener('click', function (e) {
+      if (e.target !== closeBtn && e.target !== burger && e.target !== mobileNav) {
+        body.classList.remove('lock');
+        mobileNav.classList.remove('open');
+      }
+    });
+  }
+
+  if (window.innerWidth <= 576) {
+    const restoSlider = new Swiper('.restaurant__slider', {
+      slidesPerView: 1,
+      slidesPerGroup: 1,
+      centeredSlides: true,
+      centeredSlidesBounds: true,
+      pagination: {
+        el: ".restaurant__dots",
+        bulletClass: 'restaurant__dot',
+        bulletActiveClass: 'restaurant__dot--active',
+        clickable: true
+      },
+    });
+  }
+
 });
 

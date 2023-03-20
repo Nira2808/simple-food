@@ -3,7 +3,7 @@
   align-items: center;
   justify-content: space-between;
   flex-wrap: wrap;
-  gap: 40px;
+  gap: size(40, 20);
   padding: 0 size(90, 0);
 
   &__content {
@@ -22,13 +22,17 @@
     flex-basis: 100px;
     margin: 0 auto;
     object-fit: contain;
+
+    @include r($size-xs) {
+      margin-bottom: 5px;
+    }
   }
 
   &__text {
     font-style: italic;
-    font-size: 20px;
+    font-size: size(20, 14);
     line-height: 1.5;
-    margin-bottom: 30px;
+    margin-bottom: size(30, 20);
     position: relative;
 
     &::before,
@@ -48,20 +52,30 @@
     &::before {
       left: -40px;
       top: 0;
+
+      @include r($size-xs) {
+        top: -10px;
+        left: -35px;
+      }
     }
 
     &::after {
       mask-image: url('../images/sprite.svg#icon-quote-close');
       right: -40px;
       bottom: 0;
+
+      @include r($size-xs) {
+        bottom: 10px;
+        right: -35px;
+      }
     }
   }
 
   &__name {
-    font-size: 20px;
+    font-size: size(20, 16);
     font-weight: 500;
     color: $orange-900;
-    margin-bottom: 15px;
+    margin-bottom: size(15, 10);
   }
 
   &__name-desc {

@@ -2,7 +2,7 @@
 .popular {
   
   &__nav{
-    margin-bottom: 45px;
+    margin-bottom: size(45, 24);
   }
 
   &__btn {
@@ -12,7 +12,7 @@
   }
 
   &__list{
-    margin-bottom: 60px;
+    margin-bottom: size(60, 30);
   }
 }
 

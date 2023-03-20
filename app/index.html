@@ -24,10 +24,10 @@
   <div class="container">
       
       <nav class="header__nav">
-        <a class="logo" href="#">
+        <a class="logo header__logo" href="#">
           <img class="logo__img" src="../../images/logo.svg" alt="site logo" width="200" height="39">
         </a>
-        <ul class="menu">
+        <ul class="menu header__menu">
           <li class="menu__item">
             <a class="menu__link menu__link--current" href="#">Головна</a>
           </li>
@@ -48,28 +48,91 @@
             </span>
             <span class="btn-counter">4</span>
           </button>
+          <button class="burger icon icon--burger-menu" type="button">
+            <span class="sr-only">Показати меню</span>
+          </button>
         </div>
       </nav>
+  </div>
+  <div class="mobile-nav">
+    <div class="mobile-nav__head">
+      <a class="logo" href="#">
+        <img class="logo__img" src="../../images/logo.svg" alt="site logo" width="200" height="39">
+      </a>
+      <button class="close-btn icon icon--close" type="button">
+        <span class="sr-only">Сховати меню</span>
+      </button>
+    </div>
+    <ul class="menu mobile-nav__menu">
+      <li class="menu__item">
+        <a class="menu__link menu__link--current" href="#">Головна</a>
+      </li>
+      <li class="menu__item">
+        <a class="menu__link" href="#">Страви</a>
+      </li>
+      <li class="menu__item">
+        <a class="menu__link" href="#">Контакти</a>
+      </li>
+    </ul>
+    <adress class="contacts mobile-nav__contacts">
+      <ul class="contacts__list">
+        <li class="contacts__item">
+          <a class="contacts__link icon icon--address" href="#">вул. Т.Г.Шевченка, 1</a>
+        </li>
+        <li class="contacts__item">
+          <a class="contacts__link icon icon--phone" href="tel:+380501112233">380501112233</a>
+        </li>
+        <li class="contacts__item">
+          <a class="contacts__link icon icon--mail" href="mailto:support@sfood.com">support@sfood.com</a>
+        </li>
+      </ul>
+      <ul class="social">
+        <li class="social__item">
+          <a class="social__link" href="#">
+            <span class="sr-only">Перейти до Фейсбук</span>
+            <span class="social__icon"
+              style="-webkit-mask-image: url('../../images/sprite.svg#icon-facebook'); mask-image: url('../../images/sprite.svg#icon-facebook')"></span>
+          </a>
+        </li>
+        <li class="social__item">
+          <a class="social__link" href="#">
+            <span class="sr-only">Перейти до Твіттер</span>
+            <span class="social__icon"
+              style="-webkit-mask-image: url('../../images/sprite.svg#icon-twitter'); mask-image: url('../../images/sprite.svg#icon-twitter');"></span>
+          </a>
+        </li>
+        <li class="social__item">
+          <a class="social__link" href="#">
+            <span class="sr-only">Перейти до Інстаграм</span>
+            <span class="social__icon"
+              style="-webkit-mask-image: url('../../images/sprite.svg#icon-instagram'); mask-image: url('../../images/sprite.svg#icon-instagram');"></span>
+          </a>
+        </li>
+      </ul>
+    </adress>
   </div>
 </header>
 
 <main class="main">
 
   <h1 class="sr-only">Сервіс доставки SimpleFood - номер один у місті Київ</h1>
+
 <section class="section hero mb-120" style="background-image: url(../../images/content/scooter_guy.png);">
   <h2 class="sr-only">Особливості сервісу доставки SimpleFood</h2>
   <div class="container">
-    <h2 class="hero__title">
-      Доставка <span class="text-orange">за 15 ХВИЛИН</span> 
-    </h2>
-    <div class="hero__description">
-      <p>
-        Найшвидший сервіс доставки їжі у вашому місті. Якщо запізнемось - то доставка за наш рахунок
-      </p>
-    </div>
-    <div class="hero__links">
-      <a class="btn hero__btn" href="#">Замовити</a>
-      <a class="link hero__link" href="#">Детальніше</a>
+    <div class="hero__content">
+      <h2 class="hero__title">
+        Доставка <span class="text-orange">за 15 ХВИЛИН</span> 
+      </h2>
+      <div class="hero__description">
+        <p>
+          Найшвидший сервіс доставки їжі у вашому місті. Якщо запізнемось - то доставка за наш рахунок
+        </p>
+      </div>
+      <div class="hero__links">
+        <a class="btn hero__btn" href="#">Замовити</a>
+        <a class="link hero__link" href="#">Детальніше</a>
+      </div>
     </div>
   </div>
 </section>
@@ -259,134 +322,138 @@
     <h2 class="title restaurant__title">
       Найкращі ресторани
     </h2>
-    <ul class="restaurant__list cols">
-      <li class="restaurant__item">
-        <article class="content-card">
-          <figure href="" class="content-card__head">
-            <img class="content-card__img" src="../../images/restaraunts/resto_1.jpg" alt="Blaze Pizza Restaurant" width="370" height="300">
-          </figure>
-          <div class="content-card__wrapper">
-            <a href="" class="content-card__link">
-              <h3 class="content-card__title">Blaze Pizza</h3>
-            </a>
-            <div class="content-card__info">
-              <div class="content-card__time icon icon--time">
-                <span class="sr-only">Заклад відкрито в такий час</span> 
-                <time datetime="11:00">11:00</time> - <time datetime="22:00">22:00</time>
-              </div>
-              <a class="content-card__btn btn icon icon--arrow-right" href="#">
-                <div class="sr-only">Переглянути детальніше</div>
+    <div class="restaurant__slider">
+      <ul class="restaurant__list swiper-wrapper cols">
+        <li class="restaurant__item swiper-slide">
+          <article class="content-card">
+            <figure href="" class="content-card__head">
+              <img class="content-card__img" src="../../images/restaraunts/resto_1.jpg" alt="Blaze Pizza Restaurant" width="370" height="300">
+            </figure>
+            <div class="content-card__wrapper">
+              <a href="" class="content-card__link">
+                <h3 class="content-card__title">Blaze Pizza</h3>
               </a>
-            </div>
-          </div>
-        </article>
-      </li>
-      <li class="restaurant-list__item">
-        <article class="content-card">
-          <figure href="" class="content-card__head">
-            <img class="content-card__img" src="../../images/restaraunts/resto_2.jpg" alt="Pizza Runcho Restaurant" width="370" height="300">
-          </figure>
-          <div class="content-card__wrapper">
-            <a href="" class="content-card__link">
-              <h3 class="content-card__title">Pizza Runcho</h3>
-            </a>
-            <div class="content-card__info">
-              <div class="content-card__time icon icon--time">
-                <span class="sr-only">Заклад відкрито в такий час</span> 
-                <time datetime="12:00">12:00</time> - <time datetime="21:00">21:00</time>
+              <div class="content-card__info">
+                <div class="content-card__time icon icon--time">
+                  <span class="sr-only">Заклад відкрито в такий час</span> 
+                  <time datetime="11:00">11:00</time> - <time datetime="22:00">22:00</time>
+                </div>
+                <a class="content-card__btn btn icon icon--arrow-right" href="#">
+                  <div class="sr-only">Переглянути детальніше</div>
+                </a>
               </div>
-              <a class="content-card__btn btn icon icon--arrow-right" href="#">
-                <div class="sr-only">Переглянути детальніше</div>
-              </a>
             </div>
-          </div>
-        </article>
-      </li>
-      <li class="restaurant-list__item">
-        <article class="content-card">
-          <figure href="" class="content-card__head">
-            <img class="content-card__img" src="../../images/restaraunts/resto_3.jpg" alt="Pizza Hut Restaurant" width="370" height="300">
-          </figure>
-          <div class="content-card__wrapper">
-            <a href="" class="content-card__link">
-              <h3 class="content-card__title">Pizza Hut</h3>
-            </a>
-            <div class="content-card__info">
-              <div class="content-card__time icon icon--time">
-                <span class="sr-only">Заклад відкрито в такий час</span> 
-                <time datetime="11:00">11:00</time> - <time datetime="22:00">22:00</time>
+          </article>
+        </li>
+        <li class="restaurant__item swiper-slide">
+          <article class="content-card">
+            <figure href="" class="content-card__head">
+              <img class="content-card__img" src="../../images/restaraunts/resto_2.jpg" alt="Pizza Runcho Restaurant" width="370" height="300">
+            </figure>
+            <div class="content-card__wrapper">
+              <a href="" class="content-card__link">
+                <h3 class="content-card__title">Pizza Runcho</h3>
+              </a>
+              <div class="content-card__info">
+                <div class="content-card__time icon icon--time">
+                  <span class="sr-only">Заклад відкрито в такий час</span> 
+                  <time datetime="12:00">12:00</time> - <time datetime="21:00">21:00</time>
+                </div>
+                <a class="content-card__btn btn icon icon--arrow-right" href="#">
+                  <div class="sr-only">Переглянути детальніше</div>
+                </a>
               </div>
-              <a class="content-card__btn btn icon icon--arrow-right" href="#">
-                <div class="sr-only">Переглянути детальніше</div>
-              </a>
             </div>
-          </div>
-        </article>
-      </li>
-      <li class="restaurant-list__item">
-        <article class="content-card">
-          <figure href="" class="content-card__head">
-            <img class="content-card__img" src="../../images/restaraunts/resto_4.jpg" alt="McDonald`s Restaurant" width="370" height="300">
-          </figure>
-          <div class="content-card__wrapper">
-            <a href="" class="content-card__link">
-              <h3 class="content-card__title">McDonald`s</h3>
-            </a>
-            <div class="content-card__info">
-              <div class="content-card__time icon icon--time">
-                <span class="sr-only">Заклад відкрито в такий час</span> 
-                <time datetime="06:00">06:00</time> - <time datetime="23:00">23:00</time>
+          </article>
+        </li>
+        <li class="restaurant__item swiper-slide">
+          <article class="content-card">
+            <figure href="" class="content-card__head">
+              <img class="content-card__img" src="../../images/restaraunts/resto_3.jpg" alt="Pizza Hut Restaurant" width="370" height="300">
+            </figure>
+            <div class="content-card__wrapper">
+              <a href="" class="content-card__link">
+                <h3 class="content-card__title">Pizza Hut</h3>
+              </a>
+              <div class="content-card__info">
+                <div class="content-card__time icon icon--time">
+                  <span class="sr-only">Заклад відкрито в такий час</span> 
+                  <time datetime="11:00">11:00</time> - <time datetime="22:00">22:00</time>
+                </div>
+                <a class="content-card__btn btn icon icon--arrow-right" href="#">
+                  <div class="sr-only">Переглянути детальніше</div>
+                </a>
               </div>
-              <a class="content-card__btn btn icon icon--arrow-right" href="#">
-                <div class="sr-only">Переглянути детальніше</div>
-              </a>
             </div>
-          </div>
-        </article>
-      </li>
-      <li class="restaurant-list__item">
-        <article class="content-card">
-          <figure href="" class="content-card__head">
-            <img class="content-card__img" src="../../images/restaraunts/resto_5.jpg" alt="KFC" width="370" height="300">
-          </figure>
-          <div class="content-card__wrapper">
-            <a href="" class="content-card__link">
-              <h3 class="content-card__title">KFC</h3>
-            </a>
-            <div class="content-card__info">
-              <div class="content-card__time icon icon--time">
-                <span class="sr-only">Заклад відкрито в такий час</span> 
-                <time datetime="06:00">06:00</time> - <time datetime="23:00">23:00</time>
+          </article>
+        </li>
+        <li class="restaurant__item swiper-slide">
+          <article class="content-card">
+            <figure href="" class="content-card__head">
+              <img class="content-card__img" src="../../images/restaraunts/resto_4.jpg" alt="McDonald`s Restaurant" width="370" height="300">
+            </figure>
+            <div class="content-card__wrapper">
+              <a href="" class="content-card__link">
+                <h3 class="content-card__title">McDonald`s</h3>
+              </a>
+              <div class="content-card__info">
+                <div class="content-card__time icon icon--time">
+                  <span class="sr-only">Заклад відкрито в такий час</span> 
+                  <time datetime="06:00">06:00</time> - <time datetime="23:00">23:00</time>
+                </div>
+                <a class="content-card__btn btn icon icon--arrow-right" href="#">
+                  <div class="sr-only">Переглянути детальніше</div>
+                </a>
               </div>
-              <a class="content-card__btn btn icon icon--arrow-right" href="#">
-                <div class="sr-only">Переглянути детальніше</div>
-              </a>
             </div>
-          </div>
-        </article>
-      </li>
-      <li class="restaurant-list__item">
-        <article class="content-card">
-          <figure href="" class="content-card__head">
-            <img class="content-card__img" src="../../images/restaraunts/resto_6.jpg" alt="Star Burgers Restaurant" width="370" height="300">
-          </figure>
-          <div class="content-card__wrapper">
-            <a href="" class="content-card__link">
-              <h3 class="content-card__title">Star Burgers</h3>
-            </a>
-            <div class="content-card__info">
-              <div class="content-card__time icon icon--time">
-                <span class="sr-only">Заклад відкрито в такий час</span> 
-                <time datetime="09:00">09:00</time> - <time datetime="21:00">21:00</time>
+          </article>
+        </li>
+        <li class="restaurant__item swiper-slide">
+          <article class="content-card">
+            <figure href="" class="content-card__head">
+              <img class="content-card__img" src="../../images/restaraunts/resto_5.jpg" alt="KFC" width="370" height="300">
+            </figure>
+            <div class="content-card__wrapper">
+              <a href="" class="content-card__link">
+                <h3 class="content-card__title">KFC</h3>
+              </a>
+              <div class="content-card__info">
+                <div class="content-card__time icon icon--time">
+                  <span class="sr-only">Заклад відкрито в такий час</span> 
+                  <time datetime="06:00">06:00</time> - <time datetime="23:00">23:00</time>
+                </div>
+                <a class="content-card__btn btn icon icon--arrow-right" href="#">
+                  <div class="sr-only">Переглянути детальніше</div>
+                </a>
               </div>
-              <a class="content-card__btn icon icon--arrow-right btn" href="#">
-                <div class="sr-only">Переглянути детальніше</div>
-              </a>
             </div>
-          </div>
-        </article>
-      </li>
-    </ul>
+          </article>
+        </li>
+        <li class="restaurant__item swiper-slide">
+          <article class="content-card">
+            <figure href="" class="content-card__head">
+              <img class="content-card__img" src="../../images/restaraunts/resto_6.jpg" alt="Star Burgers Restaurant" width="370" height="300">
+            </figure>
+            <div class="content-card__wrapper">
+              <a href="" class="content-card__link">
+                <h3 class="content-card__title">Star Burgers</h3>
+              </a>
+              <div class="content-card__info">
+                <div class="content-card__time icon icon--time">
+                  <span class="sr-only">Заклад відкрито в такий час</span> 
+                  <time datetime="09:00">09:00</time> - <time datetime="21:00">21:00</time>
+                </div>
+                <a class="content-card__btn icon icon--arrow-right btn" href="#">
+                  <div class="sr-only">Переглянути детальніше</div>
+                </a>
+              </div>
+            </div>
+          </article>
+        </li>
+      </ul>
+
+      <div class="restaurant__dots"></div>
+    </div>
   </div>
 </section>
 
@@ -478,15 +545,15 @@
           </figure>
         </li>
       </ul>
-    </div>
-    <div class="reviews__actions">
-      <button class="reviews__btn reviews__btn--prev" type="button">
-        
-      </button>
-      <div class="reviews__dots"></div>
-      <button class="reviews__btn reviews__btn--next" type="button">
+      <div class="reviews__actions">
+        <button class="reviews__btn reviews__btn--prev" type="button">
+          
+        </button>
+        <div class="reviews__dots"></div>
+        <button class="reviews__btn reviews__btn--next" type="button">
 
-      </button>
+        </button>
+      </div>
     </div>
   </div>
 </section>
@@ -540,7 +607,7 @@
       </div>
       <div class="footer__nav">
         <h3 class="sr-only">Навігація по сайту</h3>
-        <ul class="menu footer__menu">
+        <ul class="footer__menu">
           <li class="menu__item">
             <a class="menu__link" href="#">Як це працює</a>
           </li>
@@ -604,13 +671,15 @@
             <li class="social__item">
               <a class="social__link" href="#">
                 <span class="sr-only">Перейти до Твіттер</span>
-                <span class="social__icon" style="-webkit-mask-image: url('../../images/sprite.svg#icon-twitter'); mask-image: url('../../images/sprite.svg#icon-twitter');"></span>
+                <span class="social__icon"
+                  style="-webkit-mask-image: url('../../images/sprite.svg#icon-twitter'); mask-image: url('../../images/sprite.svg#icon-twitter');"></span>
               </a>
             </li>
             <li class="social__item">
               <a class="social__link" href="#">
                 <span class="sr-only">Перейти до Інстаграм</span>
-                <span class="social__icon" style="-webkit-mask-image: url('../../images/sprite.svg#icon-instagram'); mask-image: url('../../images/sprite.svg#icon-instagram');"></span>
+                <span class="social__icon"
+                  style="-webkit-mask-image: url('../../images/sprite.svg#icon-instagram'); mask-image: url('../../images/sprite.svg#icon-instagram');"></span>
               </a>
             </li>
           </ul>

@@ -9,7 +9,7 @@ body {
 
 .wrapper {
   overflow-x: hidden;
-  padding-top: 159px;
+  padding-top: size(159, 72);
 }
 
 .container {
@@ -23,8 +23,8 @@ body {
   display: inline-block;
   background-color: $orange-900;
   color: $white;
-  padding: 12px 32px;
-  font-size: 18px;
+  padding: size(12, 8) size(32, 24);
+  font-size: size(18, 14);
   letter-spacing: 0.03em;
   border-radius: 6px;
   outline: 3px solid transparent;
@@ -201,6 +201,18 @@ body {
     }
   }
 
+  &--close {
+    &::before {
+      mask-image: url('../images/sprite.svg#icon-close-btn');
+    }
+  }
+
+  &--burger-menu {
+    &::before {
+      mask-image: url('../images/sprite.svg#icon-burger-menu');
+    }
+  }
+
   &:hover {
     &::before {
       background-color: $white;
@@ -229,7 +241,7 @@ body {
 }
 
 .link {
-  font-size: 20px;
+  font-size: size(20, 16);
   line-height: 1.5;
   color: $darkBlue-900;
   outline: 2px solid transparent;
@@ -280,7 +292,7 @@ body {
   @include fz(36, 24);
   font-weight: 500;
   color: $darkBlue-900;
-  margin-bottom: 60px;
+  margin-bottom: size(60, 30);
   text-align: center;
 }
 
@@ -317,7 +329,7 @@ body {
 }
 
 .mb-120 {
-  margin-bottom: 120px;
+  margin-bottom: size(120, 40);
 }
 
 .cols {
