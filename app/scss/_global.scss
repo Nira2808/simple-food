@@ -213,6 +213,13 @@ body {
     }
   }
 
+  &--chevron-right {
+    &::before {
+      mask-image: url('../images/sprite.svg#icon-chevron-right');
+      background-color: #C1C1C1;
+    }
+  }
+
   &:hover {
     &::before {
       background-color: $white;

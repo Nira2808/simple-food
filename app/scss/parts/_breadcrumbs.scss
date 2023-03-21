@@ -1,0 +1,25 @@
+.breadcrumbs {
+  background-color: rgba($orange-900, 0.1);
+  padding: 24px 0;
+  margin-bottom: 60px;
+
+  &__list {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 5px;
+  }
+  
+  &__link {
+    display: flex;
+    font-size: 14px;
+    line-height: 1;
+    letter-spacing: 0.03em;
+    gap: 5px;
+
+    &::before {
+      min-width: 9px;
+      height: 10px;
+    }
+  }
+}
