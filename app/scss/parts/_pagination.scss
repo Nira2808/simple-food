@@ -1,0 +1,49 @@
+.pagination {
+
+  &__list {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  
+  &__link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: $form;
+    width: 48px;
+    height: 48px;
+    border-radius: 3px;
+
+
+    &--active {
+      border: 1px solid $darkBlue-900;
+    }
+
+    &::before {
+      min-width: 18px;
+    }
+
+    &:hover {
+      color: $white;
+    }
+
+    &:active {
+      outline: 0;
+      background-color: $form;
+      box-shadow: inset 0px -1px 4px 2px rgba(0, 0, 0, 0.15);
+    }
+
+    &:disabled {
+      &:focus,
+      &:hover,
+      &:active {
+        background-color: inherit;
+
+        &::before {
+          background-color: $gray;
+        }
+      }
+    }
+  }
+}

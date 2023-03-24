@@ -94,5 +94,23 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
+  if (window.innerWidth <= 576) {
+    const restoSlider = new Swiper('.discount__slider', {
+      slidesPerView: 1,
+      slidesPerGroup: 1,
+      centeredSlides: true,
+      centeredSlidesBounds: true,
+      pagination: {
+        el: ".discount__dots",
+        bulletClass: 'discount__dot',
+        bulletActiveClass: 'discount__dot--active',
+        clickable: true
+      },
+    });
+  }
+
+  $('.select-style').styler();
+
+  $('.js-range-slider').ionRangeSlider();
 });
 

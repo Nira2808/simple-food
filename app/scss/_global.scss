@@ -220,6 +220,18 @@ body {
     }
   }
 
+  &--prev {
+    &::before {
+      mask-image: url('../images/sprite.svg#icon-chevron-left');
+    }
+  }
+
+  &--next {
+    &::before {
+      mask-image: url('../images/sprite.svg#icon-chevron-right');
+    }
+  }
+
   &:hover {
     &::before {
       background-color: $white;
